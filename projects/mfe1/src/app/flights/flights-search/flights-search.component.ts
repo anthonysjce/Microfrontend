@@ -11,5 +11,14 @@ export class FlightsSearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSendMessage() {
+    const busEvent = new CustomEvent('app-event-bus', {
+      bubbles: true,
+      detail: {
+        eventType: 'auth-register'
+      }
+    });
+    dispatchEvent(busEvent);
+  }
 
 }
